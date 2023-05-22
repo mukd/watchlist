@@ -1,0 +1,43 @@
+CMD终端，运行如下命令，即可进入shell环境
+set FLASK_APP=manage.py文件  #启动程序
+set FLASK_ENV=development
+flask shell
+虚拟环境
+$env:FLASK_APP = "manage.py"
+$env:FLASK_ENV = "development"
+flask shell  #就可以执行flask命令
+1.初始化创建迁移数据库
+flask db init
+2.完成迁移
+flask db migrate
+每次在新增和修改完模型数据之后，只需要执行以下两个命令即可
+falsk db migrate
+flask db upgrade
+
+【数据库表生成】
+初始化数据库模型文件，终端进入虚拟环境，执行命令
+python manage.py db init  #初始化迁移文件
+你会发现项目根目录自动生成了 migrations 文件夹，然后在终端执行数据库初始化：
+python manage.py db migrate -m 'init_tables'
+
+数据库迁移(新建表)
+python manage.py db migrate -m 'init_tables' #生成迁移文件
+python manage.py db upgrade #运行
+
+#生成项目requirements.txt
+pip freeze > D:\cms\requirements.txt
+安装项目所需要的库
+pip install -r requirements.txt
+当前目录下生成requirement.txt文件
+pipreqs ./ --encoding=utf-8 --force
+导入requirement.txt安装依赖
+pip install -r requirements.txt
+
+自定义flask命令
+1. 在终端导入虚拟环境变量
+$env:FLASK_APP = "manage.py"
+$env:FLASK_ENV = "development"
+2.执行:flask --help查看可用命令
+3.在flask命令中可以看到项目名称
+举例：
+flask watchlist --help #查看注册自定义注册命令

@@ -1,0 +1,1 @@
+from .hello import bg #引入蓝图
