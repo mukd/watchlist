@@ -35,4 +35,4 @@ def register_bg(app:Flask):
     app.register_blueprint(watlist.bg)
 
     #首页url
-    app.add_url_rule(rule='/',endpoint='index',view_func=watlist.hello.index)
+    #app.add_url_rule(rule='/',endpoint='index',view_func=watlist.hello.index)

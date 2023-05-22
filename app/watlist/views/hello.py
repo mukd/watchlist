@@ -28,6 +28,7 @@ def forge():
     db.session.commit()
     click.echo('Done...')
 
+@bg.route('/')
 def index():
     user = User.query.first() #读取用用户记录
     movies = Movie.query.all() #读取所有电影记录
