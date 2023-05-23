@@ -41,3 +41,4 @@ $env:FLASK_ENV = "development"
 3.在flask命令中可以看到项目名称
 举例：
 flask watchlist --help #查看注册自定义注册命令
+

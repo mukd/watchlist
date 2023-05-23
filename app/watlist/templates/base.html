@@ -5,6 +5,11 @@
     <meta charset="utf-8">
         <!--meta这个元素会设置页面的视口，让页面根据设备的宽度来自动缩放页面，这样会让移动设备拥有更好的浏览体验：-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 插入到页面标题上方 -->
+    {% for message in get_flashed_messages() %}
+         <div class="alert">{{ message }}</div>
+    {% endfor %}
+
     <title>{{ user.name }}'s Watchlist</title>
     <link rel="stylesheet" href="{{ url_for('watlist.static', filename='css/style.css') }}" type="text/css">
     {% endblock %}
