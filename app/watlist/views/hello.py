@@ -13,6 +13,7 @@ bg = Blueprint('watlist',__name__,url_prefix='/watlist',template_folder='../temp
 def load_user(user_id):  # 创建用户加载回调函数，接受用户 ID 作为参数
     user = User.query.get(int(user_id)) #用 ID 作为 User 模型的主键查询对应的用户
     return user  #返回用户对象
+
 @bg.cli.command() #注册成为命令
 def forge():
     name = 'Kanding Mu'
@@ -54,6 +55,7 @@ def admin(username,password):
         db.session.add(user)
     db.session.commit()
     click.echo('Done')
+
 @bg.route('/login',methods=['GET','POST'])
 def login():
     if request.method=='POST':
@@ -83,6 +85,7 @@ def settings():
         db.session.commit()
         return redirect(url_for('watlist.index'))
     return render_template('settings.html')
+
 @bg.route('/logout')
 @login_required
 def logout():
