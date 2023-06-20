@@ -150,3 +150,4 @@ def delete(movie_id):
     db.session.commit()
     flash('Item deleted...')
     return redirect(url_for('watlist.index'))
+
